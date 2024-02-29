@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="br.goldbach.activities.ui.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/goToCreatedFragment"
+            app:destination="@id/createdActivitiesFragment"
+            app:popUpTo="@id/homeFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/createdActivitiesFragment"
+        android:name="br.goldbach.activities.ui.fragment.CreatedActivitiesFragment"
+        android:label="fragment_created_activities"
+        tools:layout="@layout/fragment_created_activities" />
+    <fragment
+        android:id="@+id/ongoingActivitiesFragment"
+        android:name="br.goldbach.activities.ui.fragment.OngoingActivitiesFragment"
+        android:label="fragment_ongoing_activities"
+        tools:layout="@layout/fragment_ongoing_activities" />
+    <fragment
+        android:id="@+id/doneActivitiesFragment"
+        android:name="br.goldbach.activities.ui.fragment.DoneActivitiesFragment"
+        android:label="fragment_done_activities"
+        tools:layout="@layout/fragment_done_activities" />
+</navigation>

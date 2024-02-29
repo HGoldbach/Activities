@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Activities"
         tools:targetApi="31">
         <activity
-            android:name=".ui.view.EntryActivity"
+            android:name=".ui.view.HomeActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.view.EntryActivity">
+    tools:context=".ui.fragment.HomeFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -23,10 +23,23 @@
                 android:id="@+id/constraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_200sdp"
-                android:background="#00C3F4"
+                android:background="@color/light_blue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/add_button"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_add"
+                    android:contentDescription="Add new activity" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -47,7 +60,7 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_200sdp"
-                        android:backgroundTint="#00C3F4"
+                        android:backgroundTint="@color/light_blue"
                         app:cardElevation="@dimen/_5sdp">
 
 
@@ -83,7 +96,7 @@
                                 android:text="Hiron Goldbach"
                                 android:textAlignment="center"
                                 android:textAllCaps="true"
-                                android:textColor="#008394"
+                                android:textColor="@color/dark_blue"
                                 android:textSize="@dimen/_12ssp"
                                 android:textStyle="bold" />
                         </LinearLayout>
@@ -91,10 +104,11 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/cvCreated"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_80sdp"
                         android:layout_marginTop="@dimen/_20sdp"
-                        android:backgroundTint="#00C3F4"
+                        android:backgroundTint="@color/light_blue"
                         app:cardElevation="@dimen/_5sdp">
 
                         <LinearLayout
@@ -109,7 +123,7 @@
                                 android:layout_width="@dimen/_55sdp"
                                 android:layout_height="@dimen/_55sdp"
                                 android:layout_marginStart="@dimen/_10sdp"
-                                android:backgroundTint="#CE008394"
+                                android:backgroundTint="@color/dark_blue"
                                 android:background="@drawable/img_rounded_background"
                                 android:gravity="center"
                                 android:orientation="horizontal">
@@ -137,7 +151,7 @@
                                     android:fontFamily="@font/myfont"
                                     android:gravity="bottom"
                                     android:text="Created activities"
-                                    android:textColor="#008394"
+                                    android:textColor="@color/dark_blue"
                                     android:textSize="@dimen/_12ssp"
                                     android:textStyle="bold" />
 
@@ -165,7 +179,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_80sdp"
                         android:layout_marginTop="@dimen/_20sdp"
-                        android:backgroundTint="#FF6600"
+                        android:backgroundTint="@color/orange"
                         app:cardElevation="@dimen/_5sdp">
 
                         <LinearLayout
@@ -180,7 +194,7 @@
                                 android:layout_width="@dimen/_55sdp"
                                 android:layout_height="@dimen/_55sdp"
                                 android:layout_marginStart="@dimen/_10sdp"
-                                android:backgroundTint="#CEFF6600"
+                                android:backgroundTint="@color/orange"
                                 android:background="@drawable/img_rounded_background"
                                 android:gravity="center"
                                 android:orientation="horizontal">
@@ -208,7 +222,7 @@
                                     android:fontFamily="@font/myfont"
                                     android:gravity="bottom"
                                     android:text="Ongoing activities"
-                                    android:textColor="#FF6600"
+                                    android:textColor="@color/orange"
                                     android:textSize="@dimen/_12ssp"
                                     android:textStyle="bold" />
 
@@ -236,7 +250,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_80sdp"
                         android:layout_marginTop="@dimen/_20sdp"
-                        android:backgroundTint="#008400"
+                        android:backgroundTint="@color/dark_green"
                         app:cardElevation="@dimen/_5sdp">
 
                         <LinearLayout
@@ -251,7 +265,7 @@
                                 android:layout_width="@dimen/_55sdp"
                                 android:layout_height="@dimen/_55sdp"
                                 android:layout_marginStart="@dimen/_10sdp"
-                                android:backgroundTint="#CE008400"
+                                android:backgroundTint="@color/dark_green"
                                 android:background="@drawable/img_rounded_background"
                                 android:gravity="center"
                                 android:orientation="horizontal">
@@ -279,7 +293,7 @@
                                     android:fontFamily="@font/myfont"
                                     android:gravity="bottom"
                                     android:text="Done activities"
-                                    android:textColor="#008400"
+                                    android:textColor="@color/dark_green"
                                     android:textSize="@dimen/_12ssp"
                                     android:textStyle="bold" />
 

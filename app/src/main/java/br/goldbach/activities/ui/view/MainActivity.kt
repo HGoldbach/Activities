@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
                 negativeButtonText = "Cancel",
                 fragmentActivity = this,
                 onSuccess = {
-                    val intent = Intent(this@MainActivity, EntryActivity::class.java)
+                    val intent = Intent(this@MainActivity, HomeActivity::class.java)
                     startActivity(intent)
                 },
                 onFailed = {
