@@ -2,6 +2,7 @@ package br.goldbach.activities.data.repository
 
 import br.goldbach.activities.data.dao.ActivitiesDao
 import br.goldbach.activities.data.model.Activity
+import br.goldbach.activities.data.model.ActivityStats
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
@@ -18,6 +19,10 @@ class ActivitiesRepositoryImpl @Inject constructor(private val activitiesDao: Ac
 
     override fun getDoneActivities(): Flow<List<Activity>> {
         return activitiesDao.getDoneActivities()
+    }
+
+    override fun getCountOfActivities(): Flow<List<ActivityStats>> {
+        return activitiesDao.getCountOfActivities()
     }
 
     override suspend fun insertActivity(activity: Activity) {

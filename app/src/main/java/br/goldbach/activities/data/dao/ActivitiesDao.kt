@@ -7,6 +7,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import br.goldbach.activities.data.model.Activity
+import br.goldbach.activities.data.model.ActivityStats
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -19,6 +20,9 @@ interface ActivitiesDao {
 
     @Query("SELECT * FROM activities WHERE status = 'DONE' ORDER BY title ASC")
     fun getDoneActivities() : Flow<List<Activity>>
+
+    @Query("SELECT status, count(*) as total FROM activities GROUP BY status")
+    fun getCountOfActivities() : Flow<List<ActivityStats>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertActivity(activity: Activity)
