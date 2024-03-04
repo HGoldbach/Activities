@@ -7,6 +7,19 @@
     android:background="@color/white"
     tools:context=".ui.fragment.DoneActivitiesFragment">
 
+    <ProgressBar
+        android:id="@+id/progress_bar_done_fragment"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible"
+        android:indeterminateTint="@color/dark_green"/>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
@@ -18,66 +31,66 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
             <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="@dimen/_65sdp"
                 android:layout_height="@dimen/_65sdp"
-                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_16sdp"
                 android:background="@drawable/img_rounded_background"
                 android:backgroundTint="@color/dark_green"
                 android:gravity="center"
-
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/imageView1"
+                    android:id="@+id/image_view_user"
                     android:layout_width="@dimen/_60sdp"
                     android:layout_height="@dimen/_60sdp"
                     app:shapeAppearanceOverlay="@style/Circular"
                     app:srcCompat="@android:drawable/sym_def_app_icon" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:orientation="vertical">
+            <TextView
+                android:id="@+id/text_view_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/myfont"
+                android:gravity="bottom"
+                android:text="Hiron Goldbach"
+                android:textColor="@color/dark_green"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/linearLayout"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout" />
 
-
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/myfont"
-                    android:gravity="bottom"
-                    android:text="Hiron Goldbach"
-                    android:textColor="@color/dark_green"
-                    android:textSize="@dimen/_12ssp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/myfont"
-                    android:text="Done Activities"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18ssp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-        </LinearLayout>
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/myfont"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:text="Done Activities"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/linearLayout"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_user" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_100sdp"
         android:background="@color/dark_green"
@@ -86,23 +99,42 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_height="0dp"
         android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_80sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_done"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:listitem="@layout/done_activities_item"
+            tools:visibility="visible" />
     </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/text_view_empty_activities"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/myfont"
+        android:text="There are no done activities..."
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

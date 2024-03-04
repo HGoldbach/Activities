@@ -12,8 +12,7 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/goToCreatedFragment"
-            app:destination="@id/createdActivitiesFragment"
-            app:popUpTo="@id/homeFragment"/>
+            app:destination="@id/createdActivitiesFragment" />
     </fragment>
     <fragment
         android:id="@+id/createdActivitiesFragment"
