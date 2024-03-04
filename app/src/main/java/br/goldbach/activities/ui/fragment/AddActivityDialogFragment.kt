@@ -1,7 +1,7 @@
 package br.goldbach.activities.ui.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +14,7 @@ import br.goldbach.activities.ui.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class AddActivityDialogFragment() : DialogFragment() {
+class AddActivityDialogFragment : DialogFragment() {
 
     private var _binding: FragmentAddActivityDialogBinding? = null
     private val binding get() = _binding!!
@@ -24,12 +24,16 @@ class AddActivityDialogFragment() : DialogFragment() {
         super.onCreate(savedInstanceState)
         setStyle(STYLE_NO_TITLE, android.R.style.Theme_DeviceDefault_Dialog_MinWidth)
 
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+        Log.d("LIFETAG", "OnCreateView Dialog")
+        setStyle(STYLE_NO_TITLE, android.R.style.Theme_DeviceDefault_Dialog_MinWidth)
         _binding = FragmentAddActivityDialogBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -42,21 +46,18 @@ class AddActivityDialogFragment() : DialogFragment() {
     }
 
     private fun observerInsertActivity() {
-        homeViewModel.status.observe(viewLifecycleOwner) {
-            val message = if(it.equals("Created")) {
+        homeViewModel.createdStatus.observe(viewLifecycleOwner) {
+            val message = if(it == null) {
                 resources.getString(R.string.added_activity)
             } else {
-                resources.getString(R.string.error, it)
+                resources.getString(R.string.error, it.message)
             }
             Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
             dismiss()
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-    }
+
 
     private fun addActivity() {
 
@@ -77,5 +78,10 @@ class AddActivityDialogFragment() : DialogFragment() {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("LIFETAG", "OnDestroy Dialog")
+        _binding = null
+    }
 
 }
