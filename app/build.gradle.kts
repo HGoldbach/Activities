@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id("kotlin-parcelize")
     id("com.google.dagger.hilt.android")
     id("androidx.navigation.safeargs.kotlin")
     id("com.google.devtools.ksp") version "1.9.0-1.0.11"
@@ -46,6 +47,7 @@ dependencies {
     val hilt_version = "2.46"
     val nav_version = "2.7.7"
 
+    // Biometric
     implementation("androidx.biometric:biometric-ktx:1.2.0-alpha05")
 
     // Intuit
@@ -68,6 +70,13 @@ dependencies {
 
     // Lifecycle
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
+
+    // DataStore
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+    // Glide
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
