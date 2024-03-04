@@ -2,6 +2,9 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="ActivitiesDaoTest">
+        <State />
+      </entry>
       <entry key="app">
         <State>
           <targetSelectedWithDropDown>
@@ -17,6 +20,18 @@
           </targetSelectedWithDropDown>
           <timeTargetWasSelectedWithDropDown value="2024-03-04T07:51:51.197588400Z" />
         </State>
+      </entry>
+      <entry key="daoGetAllDoneActivities_returnsAllDoneActivitiesFromDB()">
+        <State />
+      </entry>
+      <entry key="daoGetAllOngoingActivities_returnsAllOngoingActivitiesFromDB()">
+        <State />
+      </entry>
+      <entry key="daoGetCountOfActivities_returnCountOfActivitiesFromDB()">
+        <State />
+      </entry>
+      <entry key="daoUpdate_UpdateActivityFromDb()">
+        <State />
       </entry>
     </value>
   </component>

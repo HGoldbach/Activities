@@ -21,8 +21,11 @@ interface ActivitiesDao {
     @Query("SELECT * FROM activities WHERE status = 'DONE' ORDER BY title ASC")
     fun getDoneActivities() : Flow<List<Activity>>
 
-    @Query("SELECT status, count(*) as total FROM activities GROUP BY status")
+    @Query("SELECT status, count(*) as total FROM activities GROUP BY status ORDER BY status ASC")
     fun getCountOfActivities() : Flow<List<ActivityStats>>
+
+    @Query("SELECT * FROM activities WHERE id = :id")
+    fun getActivityById(id: String) : Flow<Activity>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertActivity(activity: Activity)
