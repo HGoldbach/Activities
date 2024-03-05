@@ -14,6 +14,7 @@ import br.goldbach.activities.data.repository.UserRepository
 import br.goldbach.activities.ui.fragment.EditUserDialogFragment
 import br.goldbach.activities.ui.fragment.HomeFragment
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -53,9 +54,7 @@ class HomeViewModel @Inject constructor(
     fun getUser() {
         viewModelScope.launch {
             try {
-                userRepository.getCurrentUser().collect {
-                    _user.postValue(it)
-                }
+                _user.postValue(userRepository.getCurrentUser()?.first())
             } catch (e: Exception) {
                 e.printStackTrace()
             }
@@ -91,7 +90,7 @@ class HomeViewModel @Inject constructor(
             try {
                 activitiesRepository.deleteActivity(activity)
             } catch (e: Exception) {
-                throw RuntimeException(e.message, e)
+                e.printStackTrace()
             }
         }
     }
@@ -101,7 +100,7 @@ class HomeViewModel @Inject constructor(
             try {
                 activitiesRepository.updateActivity(activity)
             } catch (e: Exception) {
-                throw RuntimeException(e.message, e)
+                e.printStackTrace()
             }
         }
     }

@@ -52,10 +52,4 @@ object AppModule {
         return UserManager
     }
 
-//    @Singleton
-//    @Provides
-//    fun provideActivity() : List<Activity> {
-//        return listOf()
-//    }
-
 }

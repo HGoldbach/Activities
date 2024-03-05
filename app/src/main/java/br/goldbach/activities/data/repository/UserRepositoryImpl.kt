@@ -13,11 +13,11 @@ class UserRepositoryImpl @Inject constructor(
     @ApplicationContext private val context: Context
 ) : UserRepository {
 
-    override suspend fun getCurrentUser(): Flow<User> {
+    override fun getCurrentUser(): Flow<User?> {
         return userManager.getCurrentUser(context)
     }
 
     override suspend fun updateCurrentUser(user: User) {
-        userManager.updateCurrentUser(context, user)
+        userManager.createOrUpdateCurrentUser(context, user)
     }
 }
