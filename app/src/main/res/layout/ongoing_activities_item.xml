@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/_80sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:backgroundTint="@color/orange"
     app:cardElevation="@dimen/_5sdp"
     android:layout_marginVertical="@dimen/_5sdp">
@@ -21,7 +22,7 @@
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:fontFamily="@font/myfont"
-            android:text="Ongoing activities"
+            tools:text="Ongoing activities"
             android:textColor="@color/orange"
             android:textSize="@dimen/_12ssp"
             android:textStyle="bold"
@@ -36,7 +37,7 @@
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:lines="2"
-            android:text="Here you can find all your created activities"
+            tools:text="Description of an ongoing activity"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +51,8 @@
             app:layout_constraintEnd_toStartOf="@+id/btn_delete"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_done"
-            app:tint="@color/dark_green" />
+            app:tint="@color/dark_green"
+            android:contentDescription="@string/change_activity_status_button" />
 
         <ImageView
             android:id="@+id/btn_delete"
@@ -60,7 +62,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/baseline_delete_forever_24" />
+            app:srcCompat="@drawable/baseline_delete_forever_24"
+            android:contentDescription="@string/delete_activity_button" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

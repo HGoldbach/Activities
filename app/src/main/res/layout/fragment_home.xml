@@ -35,7 +35,7 @@
             android:layout_height="@dimen/_35sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_5sdp"
-            android:contentDescription="Add new activity"
+            android:contentDescription="@string/add_new_activity"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_add" />
@@ -72,7 +72,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ic_edit"
-                    app:tint="@color/dark_blue" />
+                    app:tint="@color/dark_blue"
+                    android:contentDescription="@string/edit_profile_button" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
@@ -103,7 +104,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/myfont"
-                    android:text="Username"
+                    tools:text="Username"
                     android:textAlignment="center"
                     android:textAllCaps="true"
                     android:textColor="@color/dark_blue"
@@ -115,7 +116,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_12sdp"
                     android:fontFamily="@font/myfont"
-                    android:text="Total Activities"
+                    android:text="@string/total_activities"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="@dimen/_20ssp" />
@@ -183,7 +184,7 @@
                         android:layout_marginHorizontal="24dp"
                         android:fontFamily="@font/myfont"
                         android:gravity="bottom"
-                        android:text="Created activities"
+                        android:text="@string/created_activities"
                         android:textColor="@color/dark_blue"
                         android:textSize="@dimen/_12ssp"
                         android:textStyle="bold"
@@ -195,7 +196,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="24dp"
-                        android:text="Total of created activities: "
+                        android:text="@string/total_of_created_activities"
                         android:textColor="@color/black"
                         app:layout_constraintStart_toEndOf="@+id/linearLayoutCreated"
                         app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -204,7 +205,7 @@
                         android:id="@+id/text_view_total_created_number"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0"
+                        tools:text="0"
                         app:layout_constraintBottom_toBottomOf="@+id/text_view_total_created_text"
                         app:layout_constraintStart_toEndOf="@+id/text_view_total_created_text" />
 
@@ -254,7 +255,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/myfont"
                         android:gravity="bottom"
-                        android:text="Ongoing activities"
+                        android:text="@string/ongoing_activities"
                         android:textColor="@color/orange"
                         android:textSize="@dimen/_12ssp"
                         android:textStyle="bold"
@@ -267,7 +268,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="24dp"
                         android:layout_weight="1"
-                        android:text="Total of ongoing activities: "
+                        android:text="@string/total_of_ongoing_activities"
                         android:textColor="@color/black"
                         app:layout_constraintStart_toEndOf="@+id/linearLayoutOngoing"
                         app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -276,7 +277,7 @@
                         android:id="@+id/text_view_total_ongoing_number"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0"
+                        tools:text="0"
                         app:layout_constraintBottom_toBottomOf="@+id/text_view_total_ongoing_text"
                         app:layout_constraintStart_toEndOf="@+id/text_view_total_ongoing_text" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -325,7 +326,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/myfont"
                         android:gravity="bottom"
-                        android:text="Done activities"
+                        android:text="@string/done_activities"
                         android:textColor="@color/dark_green"
                         android:textSize="@dimen/_12ssp"
                         android:textStyle="bold"
@@ -338,7 +339,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="24dp"
                         android:layout_weight="1"
-                        android:text="Total of done activities: "
+                        android:text="@string/total_of_done_activities"
                         android:textColor="@color/black"
                         app:layout_constraintStart_toEndOf="@+id/linearLayoutDone"
                         app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -347,7 +348,7 @@
                         android:id="@+id/text_view_total_done_number"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0"
+                        tools:text="0"
                         app:layout_constraintBottom_toBottomOf="@+id/text_view_total_done_text"
                         app:layout_constraintStart_toEndOf="@+id/text_view_total_done_text" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
