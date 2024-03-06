@@ -7,8 +7,8 @@
     <string name="change_status_ongoing">Activity successfully changed to ongoing</string>
     <string name="deleted_activity">Activity has been deleted!</string>
     <string name="login">Login</string>
-    <string name="change_activity_status_button">Change Activity Status Button</string>
-    <string name="delete_activity_button">Delete activity button</string>
+    <string name="change_activity_status_button">Change Activity Status</string>
+    <string name="delete_activity_button">Delete activity</string>
     <string name="new_activity">New Activity</string>
     <string name="title_hint">Title</string>
     <string name="description_hint">Description</string>
@@ -20,11 +20,12 @@
     <string name="edit_user">Edit User</string>
     <string name="name_hint">Name</string>
     <string name="add_new_activity">Add new activity</string>
-    <string name="edit_profile_button">Edit perfil button</string>
+    <string name="edit_profile_button">Edit perfil</string>
     <string name="total_activities">Total Activities</string>
     <string name="total_of_created_activities">Total of created activities:</string>
     <string name="ongoing_activities">Ongoing activities</string>
     <string name="total_of_ongoing_activities">Total of ongoing activities:</string>
     <string name="total_of_done_activities">Total of done activities:</string>
     <string name="empty_ongoing_activities">There are no ongoing activities...</string>
+    <string name="edit_profile_image">Edit profile image</string>
 </resources>

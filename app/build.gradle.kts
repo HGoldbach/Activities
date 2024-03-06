@@ -56,7 +56,7 @@ dependencies {
 
     // Hilt
     implementation("com.google.dagger:hilt-android:$hilt_version")
-    kapt("com.google.dagger:hilt-android-compiler:$hilt_version")
+    kapt("com.google.dagger:hilt-compiler:$hilt_version")
 
     // Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
@@ -82,10 +82,16 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.test:core:1.5.0")
 
     // Test - Instrumented
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("junit:junit:4.13.2")
+    androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation("androidx.fragment:fragment-testing:1.6.2")
+    androidTestImplementation("com.google.dagger:hilt-android-testing:$hilt_version")
+    kaptAndroidTest("com.google.dagger:hilt-compiler:$hilt_version")
 
     // Test - Local
     testImplementation("junit:junit:4.13.2")

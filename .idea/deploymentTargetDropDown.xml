@@ -2,6 +2,15 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="ActivitiesDaoTest">
+        <State />
+      </entry>
+      <entry key="HomeFragmentTest">
+        <State />
+      </entry>
+      <entry key="activeHomeFragment_DisplayedInUi()">
+        <State />
+      </entry>
       <entry key="app">
         <State>
           <targetSelectedWithDropDown>
